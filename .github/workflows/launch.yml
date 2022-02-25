@@ -34,11 +34,7 @@ jobs:
           
       - name: launch script
         id: fetch_url
-        run: |
-          amm hello.sc >> file.txt
-          head file.txt
-          head file.txt
-          echo "::set-output name=url::$(amm hello.sc)"
+        run: echo "::set-output name=url::$(amm check_url.sc)"
           
       - name: check url
         run: echo ${{steps.fetch_url.outputs.url}}
