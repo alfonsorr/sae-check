@@ -13,7 +13,7 @@ val file = os.pwd / "executions.txt"
 val lastUrlFile = os.read.lines(file).last
 val returnString = if (lastUrlFile != urlFile) {
   os.write.append(file, urlFile)
-  urlFile
+  "https://www.mapa.gob.es" + urlFile
 }
 else ""
 println(returnString)
