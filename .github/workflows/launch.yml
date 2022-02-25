@@ -6,6 +6,8 @@ name: Check and notify
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  schedule:
+  - cron: "0 8-12 * * 1-5"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -16,6 +18,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
@@ -47,3 +54,10 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             Nueva versión del sae ${{steps.fetch_url.outputs.url}}
+            
+      - name: commit updated file for state
+        if: ${{steps.fetch_url.outputs.url != ''}}
+        run: |
+          git add executions.txt
+          git commit -m "new version update"
+          git push
