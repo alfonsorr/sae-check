@@ -22,8 +22,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+        
+      - name: Setup coursier
+        uses: coursier/cache-action@v6
 
-      - uses: coursier/setup-action@v1
+      - name: Setup ammonite
+        uses: coursier/setup-action@v1
         with:
           jvm: adopt:11
           apps: ammonite
