@@ -29,4 +29,7 @@ jobs:
           apps: ammonite
           
       - name: launch script
-        run: amm hello.sc
+        run: |
+          amm hello.sc >> file.txt
+          head file.txt
+          head file.txt
