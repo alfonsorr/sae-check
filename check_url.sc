@@ -12,7 +12,7 @@ val urlFile = doc.select("a").asScala.map(_.attr("href")).filter(_.contains("cla
 val file = os.pwd / "executions.txt"
 val lastUrlFile = os.read.lines(file).last
 val returnString = if (lastUrlFile != urlFile) {
-  os.write.append(file, urlFile)
+  os.write.append(file, "\n" + urlFile)
   "https://www.mapa.gob.es" + urlFile
 }
 else ""
