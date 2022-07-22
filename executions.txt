@@ -7,3 +7,4 @@ start
 /es/ganaderia/temas/comercio-exterior-ganadero/clasificacioncertificadosprexp27-04-2022excel2013_tcm30-618822.xlsx
 /es/ganaderia/temas/comercio-exterior-ganadero/clasificacioncertificadosprexp07-06-2022excel2013_tcm30-620755.xlsx
 /es/ganaderia/temas/comercio-exterior-ganadero/clasificacioncertificadosprexp24-06-2022excel2013_tcm30-622790.xlsx
+/es/ganaderia/temas/comercio-exterior-ganadero/clasificacioncertificadosprexp22-07-2022excel2013_tcm30-624098.xlsx
